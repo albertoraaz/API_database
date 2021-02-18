@@ -25,4 +25,3 @@ steps:
   inputs: 
     repository: demo.goharbor.io/database/repository
 - script: docker push demo.goharbor.io/database/repository:$(build.buildId) 
-- script: docker-compose up mysql
