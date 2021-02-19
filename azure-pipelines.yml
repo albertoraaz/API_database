@@ -24,4 +24,10 @@ steps:
   displayName: Push an image
   inputs: 
     repository: demo.goharbor.io/database/repository
+- script: docker login databaseproject.azurecr.io --username=databaseproject --password=NwpkuEBqmimGbwEt2aJr2=2XGBnbGAeW
+- script: docker push databaseproject.azurecr.io/:$(build.buildId) 
+- task: Docker@2
+  displayName: Push an image
+  inputs: 
+    repository: demo.goharbor.io/database/repository
 - script: docker push demo.goharbor.io/database/repository:$(build.buildId) 
